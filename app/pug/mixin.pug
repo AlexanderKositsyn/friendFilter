@@ -1,0 +1,60 @@
+
+//- mixin для svg
+//- принимает className - строка класс для svg тега
+//- принимает svgId - строка с id в спрайте svg
+
+mixin svgTemp(className, svgId)
+    svg(class=`${className} ${className}--${svgId}`)&attributes(attributes)
+        use(xlink:href="../images/sprite.svg"+ '#' + svgId)
+
+//- mixin для создания социалокс
+//- принимает elemClassName - (строка) класс списка, как элемента БЭМ родительского блока БЭМ
+//- принимает values - двумерный массив с первым значением внутренних массивов с id svg в спрайте, и вторым значением как ссылка 
+
+//- - var values = [['vk','https://vk.com/alex_gorn20'],['github','https://github.com/AlexanderKositsyn'],['in','#']];
+
+mixin socialListMixin(elemClassName, values)
+    ul(class=`${elemClassName} social-list`) 
+        //цикл для генерирования социалок в хедере
+        each val in values
+            li(class="social-list__item")   
+                a(class="social-list__link" href=val[1])
+                    svg(class=`social-list__icon social-list__icon--${val[0]}`)
+                        use(xlink:href="../images/sprite.svg"+ '#' + val[0])
+                        
+
+
+//- mixin для меню где есть переходы по страницам
+//- принимает elemClassName - (строка) класс списка, как элемента БЭМ родительского блока БЭМ
+//- принимает values - двумерный массив с первым значением текстом ссылкой, и вторым значением как ссылка 
+
+//- - var values = [['Мои работы','#'],['Обо мне','#'],['Блог','#'],['Авторизация','#']];
+
+mixin pagesListMixin(elemClassName,values,numberActiveItem)
+    ul(class=`${elemClassName} pages-list`) 
+        //цикл для генерирования текта ссылок
+        each val, index in values
+            - if(index === numberActiveItem) {
+            li(class="pages-list__item pages-list__item--active")   
+                a(class="pages-list__link" href=val[1]).
+                    #{val[0]}
+            - } else {
+            li(class="pages-list__item")
+                a(class="pages-list__link" href=val[1]).
+                    #{val[0]}
+            - }
+
+
+mixin contactsListMixin()
+    - var icons = [['skype', 'skype_kdn'], ["envelope2",'astahov@gmail.com'], ['phone2','+7 931 200 93 24'], ['map_marker','Новосибирск, ул. Инская, д.14' ]]
+    ul.contacts__list
+        //цикл для генерирования списка контактов
+        each item in icons
+            li.contacts__item
+                a(href='#').contacts__link
+                    svg.contacts__svg
+                        use(xlink:href='../../images/sprite.svg'+"#"+`${item[0]}`)
+                    | #{item[1]}
+            
+                    
+

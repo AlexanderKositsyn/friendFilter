@@ -1,0 +1,130 @@
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(
+      map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext
+    );
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append(
+      $src,
+      url(quote($path + "." + $extmod)) format(quote($format)),
+      comma
+    );
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+%clearfix {
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+// миксин  для ie10+
+
+@mixin ie10plus {
+  @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@mixin ie10plusTablet {
+  @media screen and (-ms-high-contrast: active) and (max-width: 768px),
+    screen and (-ms-high-contrast: none) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin ie10plusMobile {
+  @media screen and (-ms-high-contrast: active) and (max-width: 320px),
+    screen and (-ms-high-contrast: none) and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin full-hd {
+  @media (min-width: 1920px) {
+  }
+}
+
+@mixin quad-hd {
+  @media (min-width: 2500px) {
+    @content;
+  }
+}
+
+@mixin width-3k {
+  @media (min-width: 3000px) {
+    @content;
+  }
+}
+
+@mixin width-4k {
+  @media (min-width: 4000px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin big-tablet {
+  @media (max-width: 1090px) {
+    @content;
+  }
+}
+
+@mixin small-tablet {
+  @media (max-width: 725px) {
+    @content;
+  }
+}

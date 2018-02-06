@@ -1,0 +1,78 @@
+.friend-filter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 620px;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &__title {
+    background-color: $peach;
+    padding: 10px;
+  }
+  &__title-text {
+  }
+  &__input-block {
+    background-color: $gray;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  &__label {
+    display: inline-flex;
+    background-color: $white;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  &__svg {
+    width: 30px;
+    height: 30px;
+  }
+  &__friend-input {
+    border: none;
+  }
+  &__main {
+    display: flex;
+  }
+  &__main-column {
+    width: 50%;
+    border-right: 2px solid black;
+    padding: 10px 8px 0 8px;
+    &:last-child {
+      border: none;
+    }
+  }
+  &__main-title {
+    padding-bottom: 5px;
+    border-bottom: 2px solid $gray;
+  }
+  &__main-list {
+  }
+  &__main-item {
+  }
+  &__avatar {
+  }
+  &__name {
+  }
+  &__button {
+  }
+
+  &__add {
+    width: 30px;
+    height: 30px;
+  }
+  &__footer {
+    padding: 20px;
+    background-color: $gray;
+    text-align: right;
+  }
+  &__footer-save {
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    color: $white;
+    padding: 5px;
+    background-color: $peach;
+  }
+}

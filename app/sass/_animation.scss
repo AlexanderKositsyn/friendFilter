@@ -1,0 +1,72 @@
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes widthLineAnimate {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100px;
+  }
+}
+
+@keyframes leftHamburgerMenuAnimate {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes rightHamburgerMenuAnimate {
+  from {
+    right: -50%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes zoomInLeft {
+  0% {
+    // font-size: 0px;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  50% {
+  }
+  100% {
+    // font-size: 60px;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
