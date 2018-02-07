@@ -65,6 +65,7 @@ function render(idTemplate, data, listId) {
   list.innerHTML = html;
 }
 
+// интерфейс переноса
 function dragAndDrop() {
   ////////////
   //сделаем элементы перетаскиваемыми
@@ -100,6 +101,7 @@ function dragAndDrop() {
   friendFilter.addEventListener("dragstart", dragStart);
 }
 
+// интерфейс для сохранения в storage
 function saveDataToStorage() {
   //////////
   /// Сохраним по нажатию клика sessionStorage
@@ -151,6 +153,7 @@ function saveDataToStorage() {
   });
 }
 
+// интерфейс для переноса по кнопкам
 function replaceClickButton() {
   //////////////
   // перенос по кнопкам
@@ -176,6 +179,7 @@ function replaceClickButton() {
   });
 }
 
+// интерфейс для сортировки друзей
 function sortFriends() {
   ////////////
   // сортировка по инпутам
