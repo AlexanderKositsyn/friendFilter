@@ -170,7 +170,22 @@ module.exports = {
       // указываем подключаемый budle
       chunks: ["index"],
       inject: "head",
-      template: "./app/pug/pages/index.pug"
+      template: "./app/pug/pages/index.pug",
+      minify: {
+        html5: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true,
+        minifyURLs: false,
+        removeAttributeQuotes: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributese: true,
+        useShortDoctype: true
+      }
     })
   ]
 };
@@ -187,7 +202,8 @@ if (process.env.NODE_ENV === "production") {
     new CleanWebpackPlugin("dist"),
     new OptimizeCssAssetsPlugin({
       cssProcessorOptions: { discardComments: { removeAll: true } }
-    })
+    }),
+    new UglifyJsPlugin()
   ]);
 }
 

@@ -1,8 +1,3 @@
-/*---images---*/
-import "../../img/avatar_my.jpg";
-import "../../img/feeds_avatar1.png";
-import "../../img/feeds_avatar2.png";
-
 /*---styles---*/
 import "normalize.css";
 import "../../sass/base.scss";
@@ -197,7 +192,7 @@ function sortFriends() {
     console.log(list);
     listItems.forEach(item => {
       // сбросим сначала значение display, чтобы все было видно
-      item.style.display = "flex";
+      item.style.display = "";
       // Возьмем имя друга
       let name = item.querySelector(".friend-filter__name").textContent;
       // если нет совпадений то ставим display none
