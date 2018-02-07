@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Document</title><script src="https://vk.com/js/api/openapi.js?152" type="text/javascript"></script>
   <link href="./css/index.css" rel="stylesheet"><script type="text/javascript" src="./js/index.bundle.js"></script></head>
   <body><div class="friend-filter">
 <div class="friend-filter__title">
@@ -12,11 +12,11 @@
 </div>
 <div class="friend-filter__input-block">
 <label for="" class="friend-filter__label">
-<svg class="friend-filter__svg"></svg>
+<div class="friend-filter__search"></div>
 <input type="text" name="" id="" class='friend-filter__friend-input'>
 </label>
 <label for="" class="friend-filter__label">
-<svg class="friend-filter__svg"></svg>
+<div class="friend-filter__search"></div>
 <input type="text" name="" id="" class='friend-filter__friend-input'>
 </label>
 </div>
@@ -25,28 +25,51 @@
 <div class="friend-filter__main-title">Ваши друзья</div>
 <ul class="friend-filter__main-list">
 <li class="friend-filter__main-item">
-<div class="friend-filter__avatar"></div>
-<div class="friend-filter__name"></div>
+<div class="friend-filter__avatar"><img class="friend-filter__avatar-img" src="./images/avatar_my.jpg" alt="аватар друга"></div>
+<div class="friend-filter__name"> Александр Косицын</div>
 <div class="friend-filter__button">
-<svg class="friend-filter__add"></svg>
+<div class="friend-filter__add"></div>
+</div>
+</li>
+<li class="friend-filter__main-item">
+<div class="friend-filter__avatar"><img class="friend-filter__avatar-img" src="./images/feeds_avatar2.png" alt="аватар друга"></div>
+<div class="friend-filter__name"> Александр Косицын</div>
+<div class="friend-filter__button">
+<div class="friend-filter__add"></div>
 </div>
 </li>
 </ul>
 </div>
 <div class="friend-filter__main-column">
 <div class="friend-filter__main-title">Друзья в списке</div>
-<ul class="friend-filter__main-list">
+<ul class="friend-filter__main-list"> 
 <li class="friend-filter__main-item">
-<div class="friend-filter__avatar"></div>
-<div class="friend-filter__name"></div>
+<div class="friend-filter__avatar"><img class="friend-filter__avatar-img" src="./images/avatar_my.jpg" alt="аватар друга"></div>
+<div class="friend-filter__name"> Александр Косицын</div>
 <div class="friend-filter__button">
-<svg class="friend-filter__add"></svg>
+<div class="friend-filter__remove"></div>
+</div>
+</li>
+<li class="friend-filter__main-item">
+<div class="friend-filter__avatar"><img class="friend-filter__avatar-img" src="./images/feeds_avatar1.png" alt="аватар друга"></div>
+<div class="friend-filter__name"> Александр Косицын</div>
+<div class="friend-filter__button">
+<div class="friend-filter__remove"></div>
+</div>
+</li>
+<li class="friend-filter__main-item">
+<div class="friend-filter__avatar"><img class="friend-filter__avatar-img" src="./images/feeds_avatar1.png" alt="аватар друга"></div>
+<div class="friend-filter__name"> Александр Косицын</div>
+<div class="friend-filter__button">
+<div class="friend-filter__remove"></div>
 </div>
 </li>
 </ul>
 </div>
 </div>
-<div class="friend-filter__footer"></div>
+<div class="friend-filter__footer">
+<button class="friend-filter__footer-save">  Сохранить </button>
+</div>
 </div>
   </body>
 </html>

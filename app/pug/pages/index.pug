@@ -5,44 +5,34 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
+      
     body
+        <div id="vk_api_transport"></div>
         <div class="friend-filter">
             <div class="friend-filter__title">
                 <spna class="friend-filter__title-text">Выберите друзей</spna>
             </div>
             <div class="friend-filter__input-block">
                 <label for="" class="friend-filter__label">
-                    <svg class="friend-filter__svg"></svg>
-                    <input type="text" name="" id="" class='friend-filter__friend-input'>
+                    <div class="friend-filter__search"></div>
+                    <input type="text" name="" id="inputAllFriendsList" class='friend-filter__friend-input' >
                 </label>
                 <label for="" class="friend-filter__label">
-                    <svg class="friend-filter__svg"></svg>
-                    <input type="text" name="" id="" class='friend-filter__friend-input'>
+                    <div class="friend-filter__search"></div>
+                    <input type="text" name="" id="inputSortedFriendsList" class='friend-filter__friend-input' >
                 </label>
             </div>
             <div class="friend-filter__main">
                 <div class="friend-filter__main-column">
                 <div class="friend-filter__main-title">Ваши друзья</div>
-                <ul class="friend-filter__main-list">
-                    <li class="friend-filter__main-item">
-                    <div class="friend-filter__avatar"></div>
-                    <div class="friend-filter__name"></div>
-                    <div class="friend-filter__button">
-                        <svg class="friend-filter__add"></svg>
-                    </div>
-                    </li>
+                <ul class="friend-filter__main-list" id='allFriendsList'>
+                    
                 </ul>
                 </div>
                 <div class="friend-filter__main-column">
                 <div class="friend-filter__main-title">Друзья в списке</div>
-                <ul class="friend-filter__main-list">
-                    <li class="friend-filter__main-item">
-                    <div class="friend-filter__avatar"></div>
-                    <div class="friend-filter__name"></div>
-                    <div class="friend-filter__button">
-                        <svg class="friend-filter__add"></svg>
-                    </div>
-                    </li>
+                <ul class="friend-filter__main-list" id='sortedFriendsList'> 
+                    
                 </ul>
                 </div>
             </div>
@@ -50,4 +40,16 @@ html(lang="en")
                 <button class="friend-filter__footer-save">  Сохранить </button>
             </div>
         </div>
+        <script id="friend-template" type="text/x-handlebars-template"> {{#each people}}
+                    <li class="friend-filter__main-item" draggable="true">
+                        <div class="friend-filter__avatar">
+                            <img class='friend-filter__avatar-img' src='{{this.photo_100}}' alt="аватар друга">
+                        </div>
+                        <div class="friend-filter__name">{{this.first_name}} {{this.last_name}}</div>
+                        <div class="friend-filter__button">
+                            <div class="friend-filter__add"></div>
+                        </div>
+                    </li> {{/each}}
+        //- переносить each нельзя
+        </script>
 

@@ -33,6 +33,7 @@ module.exports = {
           pretty: true
         }
       },
+
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -158,7 +159,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      styles: path.resolve(__dirname, "./app/vue/styles/")
+      styles: path.resolve(__dirname, "./app/vue/styles/"),
+      handlebars: "handlebars/dist/handlebars.min.js"
     }
   },
   plugins: [

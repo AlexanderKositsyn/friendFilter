@@ -25,20 +25,40 @@
     border-radius: 10px;
     overflow: hidden;
   }
-  &__svg {
-    width: 30px;
-    height: 30px;
+  &__search {
+    color: #000;
+    position: relative;
+    margin-top: 2px;
+    margin-left: 3px;
+    margin-right: 10px;
+    width: 12px;
+    height: 12px;
+    border: solid 1px currentColor;
+    border-radius: 100%;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    &:before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 5px;
+      height: 6px;
+      width: 1px;
+      background-color: currentColor;
+    }
   }
   &__friend-input {
     border: none;
   }
   &__main {
     display: flex;
+    background-color: $white;
   }
   &__main-column {
     width: 50%;
     border-right: 2px solid black;
     padding: 10px 8px 0 8px;
+
     &:last-child {
       border: none;
     }
@@ -48,19 +68,89 @@
     border-bottom: 2px solid $gray;
   }
   &__main-list {
+    max-height: 400px;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 100%;
   }
   &__main-item {
+    display: flex;
+    align-items: center;
   }
   &__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  &__avatar-img {
+    width: 100%;
+    max-width: 100%;
   }
   &__name {
+    font-size: 12px;
   }
   &__button {
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
   }
 
   &__add {
-    width: 30px;
-    height: 30px;
+    color: #000;
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &:before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 4px;
+
+      border-radius: 5px;
+      background-color: currentColor;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 4px;
+      border-radius: 5px;
+      background-color: currentColor;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+  }
+  &__remove {
+    color: #000;
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &:before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 4px;
+      border-radius: 5px;
+      background-color: currentColor;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 4px;
+      border-radius: 5px;
+      background-color: currentColor;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
   }
   &__footer {
     padding: 20px;
