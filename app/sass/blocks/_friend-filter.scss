@@ -97,7 +97,7 @@
     margin-left: auto;
   }
 
-  &__add {
+  #allFriendsList &__button-icon {
     color: #000;
     position: relative;
     top: 35%;
@@ -124,7 +124,7 @@
       transform: rotate(90deg);
     }
   }
-  &__remove {
+  #sortedFriendsList &__button-icon {
     color: #000;
     position: relative;
     top: 35%;
