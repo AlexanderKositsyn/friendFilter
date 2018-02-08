@@ -8,7 +8,7 @@ html(lang="en")
       
     body
         <div id="vk_api_transport"></div>
-        <div class="friend-filter">
+        <div class="friend-filter" id="friend-filter">
             <div class="friend-filter__title">
                 <spna class="friend-filter__title-text">Выберите друзей</spna>
             </div>
@@ -37,7 +37,7 @@ html(lang="en")
                 </div>
             </div>
             <div class="friend-filter__footer">
-                <button class="friend-filter__footer-save">  Сохранить </button>
+                <button class="friend-filter__footer-save" id='saveButton'>  Сохранить </button>
             </div>
         </div>
         <script id="friend-template" type="text/x-handlebars-template"> {{#each people}}
